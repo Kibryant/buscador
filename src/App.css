@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
-}
+.container {
+  background: linear-gradient(#121212, #212b46);
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  height: 100vh;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  color: #ffffff;
+  font-size: 6em;
+
+  animation: flipTitle 2s;
 }
 
-@keyframes App-logo-spin {
+@keyframes flipTitle {
   from {
-    transform: rotate(0deg);
+    transform: rotateX(90deg);
   }
-  to {
-    transform: rotate(360deg);
+  to{
+    transform: rotateX(0deg);
+  }
+}
+
+.containerInput {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+
+  padding: 15px;
+  margin: 30px 0;
+
+  display: flex;
+}
+
+.containerInput input {
+  background-color: transparent;
+  border: 0;
+
+  color: #ffffff;
+  font-size: 20px;
+
+  outline: none;
+
+  margin-right: 8px;
+}
+
+.containerInput input::placeholder {
+  color: #f1f1f1;
+}
+
+.buttonSearch {
+  background-color: transparent;
+  border: none;
+
+  outline: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition: transform .5s;
+}
+
+.buttonSearch:hover {
+  transform: scale(1.2);
+}
+
+.main {
+  background-color: #ffffff;
+  border-radius: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 500px;
+  height: 400px;
+}
+
+.main h2 {
+  font-size: 4em;
+
+  margin: 16px 0;
+}
+
+.main span {
+  font-weight: bold;
+
+  margin-bottom: 16px;
+}
+
+@media (max-width: 620px) {
+  .title{
+    font-size: 4.5em;
+  }
+
+  .main {
+    width: 80%;
+    min-height: 250px;
+  }
+
+  .main h2 {
+    font-size: 3em;
   }
 }
